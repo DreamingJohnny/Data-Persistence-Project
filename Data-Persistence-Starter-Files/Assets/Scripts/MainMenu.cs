@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour {
 	[SerializeField] private TMP_InputField nameField;
 
 	void Start() {
-		LoadName();
+		nameField.text = " ";
 	}
 
 	public void StartGame() {
@@ -29,8 +29,6 @@ public class MainMenu : MonoBehaviour {
 		string path = Application.persistentDataPath + "/savefile.json";
 
 		PlayerData playerData = DataHandler.Instance.LoadPlayerData(path);
-
 		nameField.text = playerData.name;
 	}
-
 }
